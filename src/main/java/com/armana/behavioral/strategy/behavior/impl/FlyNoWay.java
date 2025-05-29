@@ -1,4 +1,6 @@
-package com.armana.behavioral.strategy;
+package com.armana.behavioral.strategy.behavior.impl;
+
+import com.armana.behavioral.strategy.behavior.FlyBehavior;
 
 public class FlyNoWay implements FlyBehavior {
 	@Override
