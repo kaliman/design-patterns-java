@@ -5,10 +5,6 @@ import com.armana.behavioral.strategy.ducks.MallardDuck;
 import com.armana.behavioral.strategy.ducks.ModelDuck;
 
 /**
- * The Strategy Pattern
- * Defines a family of algorithms, encapsulates each one, and makes them interchangeable.
- * Strategy lets the algorithm vary independently from clients that use it.
- * <p>
  * The App class contains the main method and demonstrates the use of the Strategy pattern
  * with the Duck superclass and its various implementations. It highlights dynamic behavior
  * changes at runtime by modifying the fly behavior of a duck.
