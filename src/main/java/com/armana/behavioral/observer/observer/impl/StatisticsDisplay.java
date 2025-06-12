@@ -13,9 +13,10 @@ public class StatisticsDisplay implements Observer, DisplayElement {
 
 	public StatisticsDisplay(WeatherData weatherData) {
 		this.weatherData = weatherData;
-		weatherData.registerObserver(this);
+		this.weatherData.registerObserver(this);
 	}
 
+	@Override
 	public void update(float temp, float humidity, float pressure) {
 		tempSum += temp;
 		numReadings++;
@@ -25,13 +26,14 @@ public class StatisticsDisplay implements Observer, DisplayElement {
 		}
 
 		if (temp < minTemp) {
- 			minTemp = temp;
+			minTemp = temp;
 		}
 
 		display();
 	}
 
+	@Override
 	public void display() {
-		System.out.println("Avg/Max/Min temperature = " + (tempSum / numReadings) + "/" + maxTemp + "/" + minTemp);
+		System.out.println("[Statistics] Avg/Max/Min temperature = " + (tempSum / numReadings) + "/" + maxTemp + "/" + minTemp);
 	}
 }
