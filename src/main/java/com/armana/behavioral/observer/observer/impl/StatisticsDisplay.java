@@ -33,6 +33,23 @@ public class StatisticsDisplay implements Observer, DisplayElement {
 	}
 
 	@Override
+	public void update() {
+		float temp = weatherData.getTemperature();
+		tempSum += temp;
+		numReadings++;
+
+		if (temp > maxTemp) {
+			maxTemp = temp;
+		}
+
+		if (temp < minTemp) {
+			minTemp = temp;
+		}
+
+		display();
+	}
+
+	@Override
 	public void display() {
 		System.out.println("[Statistics] Avg/Max/Min temperature = " + (tempSum / numReadings) + "/" + maxTemp + "/" + minTemp);
 	}
